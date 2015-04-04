@@ -13,14 +13,18 @@ puts "How many times do you want the " + animal_name + " to " + animal_sound + "
 puts "Enter 1-9 for the amount of times:"
 sound_amount = gets.chomp.to_i;
 
-if sound_amount.to_i < 1  #check that user doesnt enter 0
-	puts "You cannot choose a number less than 1!!"
-	puts "Enter 1-9 for the amount of times:"
-	sound_amount = gets.chomp.to_i;
-elsif sound_amount.to_i > 9 #check that user doesnt enter 10 or higher
-	puts "You cannot choose a number bigger than 9!!"
-	puts "Enter 1-9 for the amount of times:"
-	sound_amount = gets.chomp.to_i;
+loop do
+	if sound_amount.to_i < 1  #check that user doesnt enter 0
+		puts "You cannot choose a number less than 1!!"
+		puts "Enter 1-9 for the amount of times:"
+		sound_amount = gets.chomp.to_i;
+	elsif sound_amount.to_i > 9 #check that user doesnt enter 10 or higher
+		puts "You cannot choose a number bigger than 9!!"
+		puts "Enter 1-9 for the amount of times:"
+		sound_amount = gets.chomp.to_i;
+	else
+		break
+	end
 end
 
 print "The #{animal_name} goes "; # #{This is string interpolation syntax}
