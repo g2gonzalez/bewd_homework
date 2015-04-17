@@ -1,0 +1,54 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<!-- Latest compiled and minified Font Awesome -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+<div class="container">
+	<div class="jumbotron">
+		<div class="page-header">
+  		<h1>...and the result is: <small><%= @user_choice %> vs <%= @comp_choice %></small></h1>
+		</div>
+
+		<% if @user_choice == @comp_choice %>			<!-- check for TIE -->
+			<blockquote style="border-left-color: #d9534f">
+				<h2>Tie</h2>
+			</blockquote>
+		<% elsif @user_choice == 'rock' %>				<!-- check for ROCK -->
+			<% if @comp_choice == 'scissors' %>
+				<blockquote style="border-left-color: #d9534f">
+					<h2>You win</h2>
+				</blockquote>
+			<% elsif @comp_choice == 'paper' %>
+				<blockquote style="border-left-color: #d9534f">
+					<h2>You lose</h2>
+				</blockquote>
+			<% end %>
+		<% elsif @user_choice == 'paper' %>				<!-- check for PAPER -->
+			<% if @comp_choice == 'rock' %>
+				<blockquote style="border-left-color: #d9534f">
+					<h2>You win</h2>
+				</blockquote>
+			<% elsif @comp_choice == 'scissors' %>
+				<blockquote style="border-left-color: #d9534f">
+					<h2>You lose</h2>
+				</blockquote>	
+			<% end %>
+		<% elsif @user_choice == 'scissors' %>			<!-- check for SCISSORS -->
+			<% if @comp_choice == 'paper' %>
+				<blockquote style="border-left-color: #d9534f">
+					<h2>You win</h2>
+				</blockquote>
+			<% elsif @comp_choice == 'rock' %>
+				<blockquote style="border-left-color: #d9534f">
+					<h2>You lose</h2>
+				</blockquote>	
+			<% end %>
+		<% end %>
+		<br>
+		<a href="/" class="btn btn-primary">
+			<i class="fa fa-undo fa-fw"></i>
+			Play again
+		</a>
+	</div>
+</div>
