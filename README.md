@@ -12,3 +12,8 @@
 
 ###Week 3
 * [Rock Paper Scissor Game](https://github.com/g2gonzalez/bewd_homework/tree/master/week_3/rock_paper_scissors)
+
+###Week 4
+* [usatoday_basic](https://github.com/g2gonzalez/bewd_homework/blob/master/week_4/usatoday_basic.rb)
+* [usatoday with Sinatra](https://github.com/g2gonzalez/bewd_homework/tree/master/week_4/usatoday)
+* [pants](https://github.com/g2gonzalez/bewd_homework/tree/master/week_4/pants)
