@@ -1,0 +1,18 @@
+<!-- book_list template for usatoday_sinatra.rb file -->
+
+<% count = 0 %> <!-- variable to keep count of how many books displayed -->
+<a href="/">Back</a><br>
+
+<h1>Top 20 Fiction Books:</h1>
+
+<!-- loop to output first 20 fiction books from user chosen week -->
+<% @books.each do |book| %>
+	<% if count != 20 && book['Class'] == 'Fiction' %>
+		<h2><%= "#{count + 1}. #{book['Title']} by #{book['Author']}" %></h2>
+		<% if book['BriefDescription'] != ' ' %>
+			<p><em><%= book['BriefDescription'] %></em><p>
+		<% end %>
+		<p><%= "-----------------------------------------------" %><p>
+		<% count += 1 %>
+	<% end %>
+<% end %>

@@ -1,0 +1,16 @@
+<!-- result template for pants.rb file -->
+
+<a href="/">Back</a><br>
+
+<% clothes = 'Shorts' %>
+<% currently = @current_temp.round %> <!-- round current temp to non float -->
+<% high = @high_temp.round %> <!-- round high temp to non float -->
+<% low = @low_temp.round %> <!-- round low temp to non float -->
+
+<% if high < 74 %>	<!-- if high temp lower than 74 wear pants -->
+	<% clothes = 'Pants' %>
+<% end %>
+
+<!-- output what the user should wear -->
+<h2>You should wear: <em><%= clothes %></em>!</h2>
+<h3>It's curretly <%= currently %>F with a low of <%= low %>F and a high of <%= high %>F</h3>
