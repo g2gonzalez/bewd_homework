@@ -1,0 +1,35 @@
+<h1>Details Page</h1>
+
+<% if @image == false %>
+	<p>No image found</p>
+<% else %>
+	<img src="http://pokeapi.co<%= @image['image'] %>">
+<% end %>
+
+<h3>Name:</h3>
+<p><%= @details['name'] %></p>
+
+<h3>Abilities:</h3>
+<% @details['abilities'].each do |ability| %>
+	<p><%= ability['name'] %></p>
+<% end %>
+
+<h3>Type:</h3>
+<% @details['types'].each do |type| %>
+	<p><%= type['name'] %></p>
+<% end %>
+
+<h3>Next evolution:</h3>
+<% @details['evolutions'].each do |evolution| %>
+	<% location = evolution['resource_uri'] %>
+	<% if location == nil %>												<!-- how do i check this? -->
+		<p>No evolution found</p>
+	<% else %>
+		<p><a href="/details?path=<%= location %>"><%= evolution['to'] %></a></p>
+	<% end %>	
+<% end %>
+
+<br><br>
+
+<a href="/">Back</a>
+ 

@@ -1,0 +1,10 @@
+<h1>Welcome to the Pokedex</h1>
+
+<!-- <a href='/winner?user_choice=scissors&comp_choice=<%= @computer %>' -->
+
+<% @pokemons.each do |pokemon| %>
+	<% location = pokemon['resource_uri'] %>
+	<p><a href="/details?path=<%= location %>"><%= pokemon['name'] %></a></p>	
+<% end %> 
+
+<p>Brought to you by the <a href="http://pokeapi.co/">Pokeapi</a></p>

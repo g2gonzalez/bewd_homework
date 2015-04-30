@@ -5,6 +5,7 @@ Output the title, author and brief description of the first 20 books from the mo
 list (they are published weekly). Only output the first 20 Fiction books. Skip any books that are not Fiction.
 =end
 
+# use url paramaters to limit results
 
 require 'httparty'
 

@@ -31,5 +31,17 @@ post '/pants' do
 	@high_temp = forecast.daily.data.first.temperatureMax #grab high temp from api
 	@low_temp = forecast.daily.data.first.temperatureMin 	#grab low temp from api
 
+
+	# @hourly = forecast.hourly.data.first.temperature
+	@hourly = forecast.hourly.data
+
+	@hourly.each do |hour|
+		puts "#{hour.temperature}"
+
+	end
+
+
+
+
 	erb :result																						#use home result
 end
