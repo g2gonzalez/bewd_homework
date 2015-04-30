@@ -17,3 +17,8 @@
 * [usatoday_basic](https://github.com/g2gonzalez/bewd_homework/blob/master/week_4/usatoday_basic.rb)
 * [usatoday with Sinatra](https://github.com/g2gonzalez/bewd_homework/tree/master/week_4/usatoday)
 * [pants](https://github.com/g2gonzalez/bewd_homework/tree/master/week_4/pants)
+
+###Week 5
+* [animal_translator](https://github.com/g2gonzalez/bewd_homework/tree/master/week_5/animal_translator)
+* [pokedex](https://github.com/g2gonzalez/bewd_homework/tree/master/week_5/pokedex)
+* [random_zen](https://github.com/g2gonzalez/bewd_homework/tree/master/week_5/random_zen)
