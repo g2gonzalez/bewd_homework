@@ -1,7 +1,7 @@
 <h1>Details Page</h1>
 
 <% if @image == false %>
-	<p>No image found</p>
+	<img src="http://placehold.it/120x120">
 <% else %>
 	<img src="http://pokeapi.co<%= @image['image'] %>">
 <% end %>
@@ -20,13 +20,13 @@
 <% end %>
 
 <h3>Next evolution:</h3>
-<% @details['evolutions'].each do |evolution| %>
-	<% location = evolution['resource_uri'] %>
-	<% if location == nil %>												<!-- how do i check this? -->
-		<p>No evolution found</p>
-	<% else %>
+<% if @details['evolutions'].empty? %>
+	<p>No evolution found</p>
+<% else %>
+	<% @details['evolutions'].each do |evolution| %>
+		<% location = evolution['resource_uri'] %>
 		<p><a href="/details?path=<%= location %>"><%= evolution['to'] %></a></p>
-	<% end %>	
+	<% end %>
 <% end %>
 
 <br><br>

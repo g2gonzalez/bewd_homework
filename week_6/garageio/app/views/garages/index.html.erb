@@ -1,0 +1,22 @@
+<h1>Welcome to your Garageio</h1>
+
+<h2>You own the following cars</h2>
+<table style="width:100%">
+	<tr>
+    <th>Make</th>
+    <th>Model</th> 
+    <th>Year</th>
+    <th>Color</th>
+    <th>Nickname</th>
+  </tr>
+	<% @cars.each do |car| %>
+		<tr>
+			<td><%= car.make %></td>
+			<td><%= car.model %></td>
+			<td><%= car.year %></td>
+			<td><%= car.color %></td>
+			<td><%= car.nickname %></td>
+		</tr>
+	<% end %>
+</table>
+
