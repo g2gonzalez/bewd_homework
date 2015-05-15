@@ -22,3 +22,11 @@
 * [animal_translator](https://github.com/g2gonzalez/bewd_homework/tree/master/week_5/animal_translator)
 * [pokedex](https://github.com/g2gonzalez/bewd_homework/tree/master/week_5/pokedex)
 * [random_zen](https://github.com/g2gonzalez/bewd_homework/tree/master/week_5/random_zen)
+
+###Week 6
+* [garageio](https://github.com/g2gonzalez/bewd_homework/tree/master/week_6/garageio)
+* [grubster](https://github.com/g2gonzalez/grubster)
+
+###Week 7
+* [dog_shelter](https://github.com/g2gonzalez/bewd_homework/tree/master/week_7/dog_shelter)
+* [garageio_2.0](https://github.com/g2gonzalez/bewd_homework/tree/master/week_7/garageio_2.0)
