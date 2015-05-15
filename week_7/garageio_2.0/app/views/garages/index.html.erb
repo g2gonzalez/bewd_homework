@@ -1,0 +1,14 @@
+<h1>Welcome Garageio v2.0</h1>
+
+<h2>You own the following cars</h2>
+<h4>Click on a car to view details about it</h4>
+
+<ul>
+	<% @cars.each do |car| %>
+		<li>
+			<a href="/cars/<%= car.id %>"><%= car.nickname %></a>
+		</li>
+	<% end %>
+</ul>
+
+<a href="/cars/new">Add new car</a>

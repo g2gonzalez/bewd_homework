@@ -1,0 +1,20 @@
+<h1>Found a dog? Add them here!</h1>
+
+<%= form_for @dog do |f| %>
+	Name:
+	<%= f.text_field :name %><br>
+	Breed:
+	<%= f.text_field :breed %><br>
+	Color:
+	<%= f.text_field :color %><br>
+	Size:
+	<%= f.text_field :size %><br>
+	Age:
+	<%= f.text_field :age %>
+	<br>
+	<%= f.submit "Add dog" %>
+<% end %>
+
+<br>
+
+<a href="/">Home</a>

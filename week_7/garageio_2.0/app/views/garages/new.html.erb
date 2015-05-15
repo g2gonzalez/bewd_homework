@@ -1,0 +1,18 @@
+<h1>Add a car to your Garageio</h1>
+
+<%= form_for @car do |f| %>
+	Make:
+	<%= f.text_field :make %><br>
+	Model:
+	<%= f.text_field :model %><br>
+	Year:
+	<%= f.number_field :year %><br>
+	Color:
+	<%= f.text_field :color %><br>
+	Nickname:
+	<%= f.text_field :nickname %>
+	<br>
+	<%= f.submit "Add Car" %>
+<% end %>
+
+<a href="/">Home</a>

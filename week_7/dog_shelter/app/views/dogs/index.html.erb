@@ -1,0 +1,13 @@
+<h1>Pasadena Dog Shelter</h1>
+
+<p>Click on a dog below to view more information on that dog.</p>
+
+<ul>
+	<% @dogs.each do |dog| %>
+		<li><a href="/dogs/<%= dog.id %>"><%= dog.name %></a></li>
+	<% end %>
+</ul>
+
+<br>
+
+<a href="/dogs/new">Add new dog</a>
