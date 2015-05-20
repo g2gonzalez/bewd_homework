@@ -1,0 +1,35 @@
+<h1>Add Book</h1>
+
+<%= form_for @book do |f| %>  <!-- form for creating new book -->
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br><br>
+  <%= f.label :genre %>
+  <%= f.text_field :genre %>
+  <br><br>
+  <%= f.label :year_published %>
+  <%= f.number_field :year %>
+  <br><br><br>
+
+  <b>Author Directory</b>     
+  <% if @authors.nil? %>  <!-- check author records exist -->
+    <p>No authors found</p>
+  <% else %>
+    <% @authors.each do |author| %>  <!-- output available author choices -->
+  	  <p><%= author.id %> <%= author.name %></p>
+    <% end %>
+  <% end %>
+  <br>
+
+  <%= f.label :author_id %>
+  <%= f.text_field :author_id %>
+  <br><br> 
+
+  <%= f.submit 'Add Book' %>
+
+<% end %>
+
+<br><br>
+
+<a href="/">Back</a>

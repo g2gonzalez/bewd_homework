@@ -1,0 +1,17 @@
+<h1><%= @author.name %></h1>  <!-- output authors name -->
+
+<h2>Book History</h2>
+
+<% if @author.books.empty? %>  <!-- check if author has any records -->
+	<p>No books found for <%= @author.name %></p>
+<% else %>
+	<ol>
+		<% @author.books.each do |book| %>  <!-- if records exist then output the title of the book -->
+			<li><%= book.title %></li>
+		<% end %>
+	</ol>
+<% end %>
+
+<br><br>
+
+<a href="/">Home</a>

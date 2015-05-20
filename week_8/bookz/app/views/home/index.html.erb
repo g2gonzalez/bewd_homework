@@ -1,0 +1,20 @@
+<h1>Bookz Homessss</h1>
+
+<h2>Books</h2>
+<ul>
+	<% @books.each do |book| %>  <!-- list all books in db -->
+		<li><%= book.title %></li>
+	<% end %>
+</ul>
+
+<h2>Authors</h2>
+<ul>
+	<% @authors.each do |author| %>  <!-- list all authors in db -->
+		<li><%= author.name %> << <a href="/authors/<%= author.id %>">Details</a></li>
+	<% end %>
+</ul>
+
+<br><br>
+
+<a href="/authors/new">Add Author</a> |
+<a href="/books/new">Add Book</a>
