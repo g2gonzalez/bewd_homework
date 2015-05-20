@@ -1,8 +1,6 @@
-<h1>Found a dog? Add them here!</h1>
+<h1>Edit current record</h1>
 
-<p><%= @errors.to_sentence if @errors %></p>
-
-<%= form_for @dog do |f| %>
+<%= form_for @dog, url: "/dogs/#{@dog.id}", method: "patch" do |f| %>
 	Name:
 	<%= f.text_field :name %><br>
 	Breed:
@@ -14,7 +12,7 @@
 	Age:
 	<%= f.text_field :age %>
 	<br>
-	<%= f.submit "Add dog" %>
+	<%= f.submit "Update dog" %>
 <% end %>
 
 <br>

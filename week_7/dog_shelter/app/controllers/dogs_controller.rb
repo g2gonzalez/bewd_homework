@@ -14,12 +14,34 @@ class DogsController < ApplicationController
 			redirect_to '/'
 		else
 			render :new
+			@errors = @dog.errors.full_messages
 		end
 	end
 
 	def show
-		@dog = Dog.find(params['id'])
+		@dog = Dog.find(params['id']) #or Dog.find(params[:id])
 	end
+
+	def edit
+		@dog = Dog.find(params[:id])
+	end
+
+	def update
+		@dog = Dog.find(params[:id])
+
+		if @dog.update(dog_params)
+			redirect_to '/'
+		else
+			render :edit
+		end
+	end
+
+	#def destroy
+		#@dog = Dog.find(params[:id])
+		#@dog.destroy
+
+		#redirect_to '/'
+	#end
 
 	private
 		def dog_params
