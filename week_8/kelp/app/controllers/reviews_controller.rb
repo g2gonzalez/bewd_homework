@@ -5,10 +5,10 @@ class ReviewsController < ApplicationController
 
 	def create
 		@review = Review.new(review_params)
-		@rest_id = review_params[:restaurant_id]
+		@rest_id = review_params[:restaurant_id]  #grab restaurant id for redirecting
 
 		if @review.save
-			redirect_to "/restaurants/#{@rest_id}"
+			redirect_to "/restaurants/#{@rest_id}"  #redirect to same page where review was added
 		else
 			render :new
 		end

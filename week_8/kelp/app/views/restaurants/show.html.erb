@@ -9,6 +9,7 @@
 
 <h4>Add Review</h4>
 
+<!-- review form -->
 <%= form_for @review do |f| %> 
 	
 	<%= f.hidden_field :restaurant_id, value: @rest_id %>
@@ -26,6 +27,7 @@
 
 <h3>Reviews for <%= @restaurant.name %></h3>
 
+<!-- show restaurant reviews below -->
 <% if @restaurant.reviews.empty? %>
 	<p>No reviews found</p>
 <% else %>

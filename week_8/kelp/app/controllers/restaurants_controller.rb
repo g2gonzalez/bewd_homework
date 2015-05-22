@@ -19,8 +19,8 @@ class RestaurantsController < ApplicationController
 
 	def show
 		@restaurant = Restaurant.find(params[:id])
-		@rest_id    = params[:id]
-		@review     = Review.new
+		@rest_id    = params[:id]  #grab restaurant id to add to review record
+		@review     = Review.new  #set variable to add review in retaurant show page
 	end
 
 	private
