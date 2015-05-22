@@ -1,0 +1,13 @@
+<h1>Welcome to Kelp, the Yelp of sushi</h1>
+
+<h3>Check out all the sushi restaurants and their details below:</h3>
+
+<ul>
+	<% @restaurants.each do |restaurant| %>
+		<li><a href="/restaurants/<%= restaurant.id %>"><%= restaurant.name %></a></li>
+	<% end %>
+</ul>
+
+<br><br>
+
+<a href="/restaurants/new">Add Restaurant</a>

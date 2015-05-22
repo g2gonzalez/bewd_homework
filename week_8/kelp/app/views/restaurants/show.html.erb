@@ -1,0 +1,37 @@
+<h1><%= @restaurant.name %></h1>
+
+<p><%= @restaurant.name %> | <em><%= @restaurant.address %></em></p>
+
+<a href="/">Home</a>
+
+<br><br>
+<hr><br>
+
+<h4>Add Review</h4>
+
+<%= form_for @review do |f| %> 
+	
+	<%= f.hidden_field :restaurant_id, value: @rest_id %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <br><br>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+  <br><br>
+  <%= f.submit 'Add Review' %>
+
+<% end %>
+
+<br>
+
+<h3>Reviews for <%= @restaurant.name %></h3>
+
+<% if @restaurant.reviews.empty? %>
+	<p>No reviews found</p>
+<% else %>
+	<ol>
+		<% @restaurant.reviews.each do |review| %>
+			<li><%= review.body %> | <em><%= review.author %></em></li>
+		<% end %>
+	</ol>
+<% end %>
