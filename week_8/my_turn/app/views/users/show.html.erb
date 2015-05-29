@@ -1,0 +1,12 @@
+<h1><%= @user.name %>'s Page</h1>
+
+<h3>Movie's chosen:</h3>
+<ul>
+	<% @user.movies.each do |movie| %>
+		<li><%= movie.title %> | <%= movie.location %></li>
+	<% end %>
+</ul>
+
+<br><br>
+
+<%= link_to "Home", root_path %>

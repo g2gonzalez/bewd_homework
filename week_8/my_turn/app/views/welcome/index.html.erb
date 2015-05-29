@@ -1,0 +1,17 @@
+<h1>Welcome To The DG Movie Tracker</h1>
+
+<h3>Movies History</h3>
+
+<% @movies.each do |movie| %>
+	<%= movie.title %> | <%= link_to "#{movie.user.name}", user_path(movie.user_id) %>
+	<br>
+<% end %>
+
+<h3>Movie Count</h3>
+Dessy: <%= @d_user.movies.count %>
+<br>
+Jerry: <%= @j_user.movies.count %>
+
+<br><br>
+
+<%= link_to "Add movie", new_movie_path %> | <%= link_to "Now Playing", now_playing_path %>

@@ -1,0 +1,12 @@
+<h1>Now Playing</h1>
+<% count = 0 %>
+
+<% @now_playing.each do |movie| %>
+	<% if count < 10 %>
+		<img src="http://image.tmdb.org/t/p/w92/<%= movie['poster_path'] %>">
+		<br>
+		<%= movie['original_title'] %> | <%= movie['release_date'] %>
+		<% count += 1 %>
+		<br><br>
+	<% end %>
+<% end %>

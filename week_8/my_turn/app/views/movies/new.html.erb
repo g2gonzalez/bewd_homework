@@ -1,0 +1,20 @@
+<h1>Add movie record</h1>
+
+<%= form_for @movie do |f| %> 
+	
+	<!-- movie form -->
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br><br>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <br><br>
+  <%= f.select(:user_id, [['Dessy', 1], ['Jerry', 2]]) %>
+  <br><br>
+  <%= f.submit 'Add Movie' %>
+
+<% end %>
+
+<br><br>
+
+<%= link_to "Home", root_path %>
