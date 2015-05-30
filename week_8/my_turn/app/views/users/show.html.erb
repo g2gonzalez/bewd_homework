@@ -1,12 +1,33 @@
-<h1><%= @user.name %>'s Page</h1>
+<div class="jumbotron">
+	<h1 class="text-center"><%= @user.name %>'s Page</h1>
+</div>
 
-<h3>Movie's chosen:</h3>
-<ul>
-	<% @user.movies.each do |movie| %>
-		<li><%= movie.title %> | <%= movie.location %></li>
-	<% end %>
-</ul>
+<div class="row">
+	<div class="col-md-6 .col-sm-6 .col-xs-6 col-md-offset-3">
+
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<h4 class="text-center">Movie's chosen</h4>
+			</div>
+			<div class="panel-body">
+				<table class="table table-striped table-responsive">
+					<tr>
+						<th>Movie</th>
+						<th>Location</th>
+					</tr> 
+					<% @user.movies.each do |movie| %>
+						<tr>
+							<td><%= movie.title %></td>
+							<td><%= movie.location %></td>
+						</tr>
+					<% end %>
+				</table>
+			</div>
+		</div>
+
+	</div>
+</div>
 
 <br><br>
 
-<%= link_to "Home", root_path %>
+<%= link_to "Home", root_path, class: "btn btn-success" %>

@@ -1,17 +1,55 @@
-<h1>Welcome To The DG Movie Tracker</h1>
+<div class="jumbotron">
+	<h1 class="text-center">Welcome To The DG Movie Tracker</h1>
+</div>
 
-<h3>Movies History</h3>
+<!-- output all movies watched and the user who chose it -->
+<div class="row">
 
-<% @movies.each do |movie| %>
-	<%= movie.title %> | <%= link_to "#{movie.user.name}", user_path(movie.user_id) %>
-	<br>
-<% end %>
+	<div class="col-md-6 .col-sm-6 .col-xs-6">
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<h4 class="text-center">Movies History</h4>
+			</div>
+			<div class="panel-body">
+				<table class="table table-striped table-responsive">
+					<tr>
+    				<th>#</th>
+    				<th>Movie</th> 
+    				<th>User</th>
+  				</tr>
+					<% @movies.each_with_index do |movie, i| %>
+						<tr>	
+							<td><%= "#{i + 1}" %></td>
+							<td><%= movie.title %></td>
+							<td><%= link_to "#{movie.user.name}", user_path(movie.user_id) %></td>
+						</tr>
+					<% end %>
+				</table>
+			</div>
+		</div>
+	</div>
 
-<h3>Movie Count</h3>
-Dessy: <%= @d_user.movies.count %>
-<br>
-Jerry: <%= @j_user.movies.count %>
+	<!-- output the total count of movies chosen by each user -->
+	<div class="col-md-6 .col-sm-6 .col-xs-6">
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<h4 class="text-center">Movie Count</h4>
+			</div>
+			<div class="panel-body">
+				<table class="table table-striped table-responsive">
+					<tr> 
+    				<th>User</th>
+    				<th>Count</th>
+  				</tr>
+  				<% @users.each do |user| %>
+						<tr>
+							<td><%= user.name %></td>
+							<td><span class="badge"><%= user.movies.count %></span></td>
+						</tr>
+					<% end %>
+				</table>
+			</div>
+		</div>
+	</div>
 
-<br><br>
-
-<%= link_to "Add movie", new_movie_path %> | <%= link_to "Now Playing", now_playing_path %>
+</div>

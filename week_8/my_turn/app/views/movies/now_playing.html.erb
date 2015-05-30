@@ -1,12 +1,43 @@
-<h1>Now Playing</h1>
+<div class="jumbotron">
+	<h1 class="text-center">Now Playing</h1>
+</div>
+
+<!-- initialize count variable --> 
 <% count = 0 %>
 
-<% @now_playing.each do |movie| %>
-	<% if count < 10 %>
-		<img src="http://image.tmdb.org/t/p/w92/<%= movie['poster_path'] %>">
-		<br>
-		<%= movie['original_title'] %> | <%= movie['release_date'] %>
-		<% count += 1 %>
-		<br><br>
-	<% end %>
-<% end %>
+<div class="row">
+	<% @now_playing.each do |movie| %>
+		<div class="col-md-3 .col-sm-3">
+		<!-- only grab the first 10 movies -->
+			<% if count < 8 %>
+			<!-- pull required movie data -->
+				<% poster_path = movie['poster_path'] %>
+				<% original_title = movie['original_title'] %>
+				<% imdb_id = movie['imdb_id'] %>
+				<!-- output movie data -->
+		
+				<div class="panel panel-danger">
+					<div class="panel-heading">
+						<!-- imdb link that opens in a new tab -->
+						<a href="http://www.imdb.com/title/<%= imdb_id %>/" target="_blank">
+							<h4 class="text-center"><%= original_title %></h4>
+						</a>
+					</div>
+					<div class="panel-body">
+						<img class="poster" src="http://image.tmdb.org/t/p/w500/<%= poster_path %>">  <!-- image url -->
+					</div>
+				</div>
+		
+				<!-- increment the count -->
+				<br>
+				<% count += 1 %>
+			<% end %>
+		</div>
+	<% end %>	
+</div>
+
+<br>
+
+<%= link_to "Home", root_path, class: "btn btn-success" %>
+
+<br><br>
